@@ -1,0 +1,24 @@
+version: '3.5'
+
+services:
+  docker-nuxt:
+    ports:
+      - 8001:8001
+    build:
+      context: ../
+      dockerfile: Dockerfile.dev
+    image: docker-nuxt:v1
+    container_name: 'docker-nuxt'
+    volumes:
+      - ../:/usr/src/app/
+      # - ../assets:/usr/src/app/assets
+      # - ../components:/usr/src/app/components
+      # - ../layouts:/usr/src/app/layouts
+      # - ../middleware:/usr/src/app/middleware
+      # - ../pages:/usr/src/app/pages
+      # - ../plugins:/usr/src/app/plugins
+      # - ../static:/usr/src/app/static
+      # - ../store:/usr/src/app/store
+      # - ../test:/usr/src/app/test
+      # - ../package.json:/usr/src/app/package.json
+      # - ../nuxt.config.js:/usr/src/app/nuxt.config.js

@@ -1,0 +1,25 @@
+version: '3.5'
+
+services:
+  docker-nuxt_build:
+    build: ../
+    container_name: 'docker-nuxt_build'
+    # volumes:
+      # - nuxtdist:/usr/src/app/nuxtdist
+    ports:
+      - 8001:8001
+
+  docker-nuxt_web:
+    image: nginx
+    ports:
+      - 80:80
+    container_name: 'docker-nuxt_web'
+    restart: unless-stopped
+    volumes:
+      # - nuxtdist:/usr/share/nginx/html:ro
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+    links: 
+      - docker-nuxt_build
+
+volumes:
+  nuxtdist:

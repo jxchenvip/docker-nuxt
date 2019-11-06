@@ -45,5 +45,6 @@ export default {
     */
     extend(config, ctx) {
     }
-  }
+  },
+  buildDir: 'nuxtdist'
 }

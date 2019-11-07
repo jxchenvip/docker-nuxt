@@ -21,6 +21,7 @@
     "docker:dev": "docker-compose -f ./docker/docker-compose.dev.yml up"
   },
   "dependencies": {
+    "@guanyu/iwant": "^1.1.0",
     "ant-design-vue": "^1.1.10",
     "nuxt": "^2.0.0"
   },

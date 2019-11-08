@@ -1,2 +1,2 @@
-npm run build
-pm2 start npm --name nuxt -- start
+#!/bin/bash
+pm2-runtime start npm --name docker-nuxt-line -- run start

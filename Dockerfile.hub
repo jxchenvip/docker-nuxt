@@ -1,16 +1,12 @@
-FROM circleci/node:latest-browsers
-
+FROM node:8-alpine
 WORKDIR /usr/src/app/
 USER root
 COPY package.json ./
-RUN yarn
+RUN npm install --production
 RUN yarn global add pm2
-ENV HOST 0.0.0.0
-
 COPY ./ ./
-
-RUN yarn run build
-
+RUN npm run build
 RUN chmod 777 ./run.sh
-
+EXPOSE 8088
 CMD ["./run.sh"]
+

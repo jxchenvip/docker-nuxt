@@ -25,14 +25,6 @@
 <script>
 import Logo from "~/components/Logo.vue";
 
-import { calc } from "@guanyu/iwant";
-
-const a = (0.1 + 0.2/0.01);
-
-console.log(a);
-
-console.log(calc(a));
-
 export default {
   components: {
     Logo

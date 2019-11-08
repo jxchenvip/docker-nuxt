@@ -4,22 +4,22 @@ services:
   docker-nuxt_build:
     build: ../
     container_name: 'docker-nuxt_build'
-    # volumes:
-      # - nuxtdist:/usr/src/app/nuxtdist
-    ports:
-      - 8001:8001
-
-  docker-nuxt_web:
-    image: nginx
-    ports:
-      - 80:80
-    container_name: 'docker-nuxt_web'
-    restart: unless-stopped
+    image: docker-nuxt_build:v1
     volumes:
-      # - nuxtdist:/usr/share/nginx/html:ro
-      - ./nginx.conf:/etc/nginx/conf.d/default.conf
-    links: 
-      - docker-nuxt_build
+      - dists:/usr/src/app/dists
+    ports:
+      - 8088:8088
+
+  # docker-nuxt_web:
+  #   image: nginx
+  #   ports:
+  #     - 80:80
+  #   container_name: 'docker-nuxt_web'
+  #   restart: unless-stopped
+  #   volumes:
+  #     - dists:/usr/share/nginx/html:ro
+  #     - ./nginx.conf:/etc/nginx/conf.d/default.conf
+
 
 volumes:
-  nuxtdist:
+  dists:

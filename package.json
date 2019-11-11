@@ -17,7 +17,7 @@
     "start": "nuxt start",
     "generate": "nuxt generate",
     "docker-ant:build": "docker-compose -f ./docker/docker-compose.ant.yml up",
-    "docker-hub:build": "docker build  -f Dockerfile.hub -t  docker-nuxt:v5 ./",
+    "docker-hub:build": "docker build  -f Dockerfile.hub -t docker-nuxt ./",
     "docker-prod:dev": "docker-compose -f ./docker/docker-compose.yml up",
     "docker:build": "docker-compose -f ./docker/docker-compose.dev.yml build",
     "docker:dev": "docker-compose -f ./docker/docker-compose.dev.yml up"

@@ -7,12 +7,12 @@ node_modules
 
 # production
 /.vscode
-
+.git
 # misc
 .DS_Store
 npm-debug.log*
 yarn-error.log
-
+/.nuxt
 /coverage
 .idea
 yarn.lock

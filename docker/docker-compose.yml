@@ -8,7 +8,7 @@ services:
     volumes:
       - dists:/usr/src/app/dists
     ports:
-      - 8088:8088
+      - 8088:80
 
   # docker-nuxt_web:
   #   image: nginx
